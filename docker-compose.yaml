@@ -1,0 +1,9 @@
+version: '3'
+services:
+  react-app:
+    container_name: react-app
+    image: 192.168.1.10:8443/react-app  # 여기에서 React 프로젝트의 이미지로 변경
+    ports:
+      - "80:80"
+    deploy:
+      replicas: 1

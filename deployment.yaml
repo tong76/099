@@ -1,0 +1,21 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: react-app
+  template:
+    metadata:
+      labels:
+        app: react-app
+    spec:
+      containers:
+        - name: react-app
+          image: 192.168.1.10:8443/react-app  # 여기에서 React 프로젝트의 이미지로 변경
+          #command: ["sh", "-c", "cd /099 && npm install && npm start"]
+          ports:
+            - containerPort: 80
